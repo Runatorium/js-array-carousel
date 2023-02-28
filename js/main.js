@@ -24,3 +24,42 @@ for(i=0; i<imgarray.length; i++){
     let dispayedimg = 0;
     const imgcontainerdom = document.getElementsByClassName('image-container');
     imgcontainerdom[dispayedimg].classList.remove('d-none');
+
+
+
+    const nextarrowDom = document.querySelector('#arrow-ahead');
+    const previousarrowDom = document.querySelector('#arrow-backwards');
+
+    nextarrowDom.addEventListener('click', 
+    function() {
+        if (dispayedimg < imgcontainerdom.length - 1) {
+
+            imgcontainerdom[dispayedimg].classList.add('d-none');
+            dispayedimg++;
+            imgcontainerdom[dispayedimg].classList.remove('d-none');
+
+            previousarrowDom.classList.remove('std-position');
+
+            
+        } else {
+            nextarrowDom.classList.add('hide-arrow');
+         } 
+    }
+);
+
+
+        previousarrowDom.addEventListener('click', 
+        function() {
+        if (dispayedimg > 0) {
+
+            imgcontainerdom[dispayedimg].classList.add('d-none');
+            dispayedimg--;
+            imgcontainerdom[dispayedimg].classList.remove('d-none');
+            
+            nextarrowDom.classList.remove('hide-arrow')
+                
+         } else {
+            previousarrowDom.classList.add('std-position');
+        } 
+     }
+);
