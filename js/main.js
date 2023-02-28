@@ -25,7 +25,7 @@ for(i=0; i<imgarray.length; i++){
     const imgcontainerdom = document.getElementsByClassName('image-container');
     imgcontainerdom[dispayedimg].classList.remove('d-none');
 
-
+/*Event listener per scorrere l'array di immagini a schermo in entrambe le direzioni*/
 
     const nextarrowDom = document.querySelector('#arrow-ahead');
     const previousarrowDom = document.querySelector('#arrow-backwards');
@@ -42,7 +42,9 @@ for(i=0; i<imgarray.length; i++){
 
             
         } else {
-            nextarrowDom.classList.add('hide-arrow');
+            imgcontainerdom[dispayedimg].classList.add('d-none');
+            dispayedimg=0;
+            imgcontainerdom[dispayedimg].classList.remove('d-none')
          } 
     }
 );
@@ -59,7 +61,9 @@ for(i=0; i<imgarray.length; i++){
             nextarrowDom.classList.remove('hide-arrow')
                 
          } else {
-            previousarrowDom.classList.add('std-position');
+            imgcontainerdom[dispayedimg].classList.add('d-none');
+            dispayedimg=4;
+            imgcontainerdom[dispayedimg].classList.remove('d-none')
         } 
      }
 );
