@@ -7,12 +7,14 @@ const imgarray = [
     'img/05.webp'
 ];
 
+
+
 const carouseldom = document.querySelector('.carousel');
 let carouselcnt = "";
 
 for(i=0; i<imgarray.length; i++){
-    const imgcontainer = `<div class="image-container">
-                            <img class="img d-none" src="${imgarray[i]}" />
+    const imgcontainer = `<div class="image-container d-none">
+                            <img class="img" src="${imgarray[i]}" />
                             </div>`;   
     carouselcnt += imgcontainer;
 }
@@ -20,6 +22,5 @@ for(i=0; i<imgarray.length; i++){
 /*Array dinamico di immagini*/
 /*i Div contenenti le immagini vengono creati con class d-none*/
     let dispayedimg = 0;
-    const imgcontainerdom = document.getElementsByClassName('img');
+    const imgcontainerdom = document.getElementsByClassName('image-container');
     imgcontainerdom[dispayedimg].classList.remove('d-none');
-    
